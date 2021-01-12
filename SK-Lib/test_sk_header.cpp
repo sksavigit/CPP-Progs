@@ -1,5 +1,6 @@
 #include<iostream>
 #include "sklib_strings.h"
+#include "sklib_numbers.h"
 
 using namespace std;
 
@@ -14,5 +15,13 @@ int main(){
     reverse_string(str);
     cout << "\nReversed string:\n"<<str;
     cout << "\n";
+    
+    int arrList[]={1,2,3,49,0,8,99,222,0,222,0,99999};
+    cout << "\nGiven list:\n" ;
+    print(arrList);
+    cout << "\nBiggest number of the given array is:";
+    cout << find_the_biggest_of_the_array(arrList);
+    cout << "\n";
+
     return 0;
 }
