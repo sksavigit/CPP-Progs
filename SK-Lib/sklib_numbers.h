@@ -10,18 +10,13 @@ int sum_up(int a,int b){
   return (a+b);
 }
 
-//Print array of numbers
-void print(int arrList[]){
-  int i=0;
-  for(i=0;arrList[i]!='\0';i++) cout << arrList[i] << " ";
-}
+int find_the_biggest_of_the_array(int numList[],int arrSize){
+      int biggestNum=0;
+      if(arrSize >0) biggestNum=numList[0];
 
-int find_the_biggest_of_the_array(int *numList){
-      int biggestNum=*numList;
-      
-      while(*numList){
-          if(biggestNum < *numList) biggestNum = *numList;
-          ++numList;
+      while(arrSize > 0){
+          if(biggestNum < numList[arrSize-1]) biggestNum = numList[arrSize-1];
+          arrSize--;
       }
 
       return biggestNum;

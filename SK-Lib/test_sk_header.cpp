@@ -17,10 +17,11 @@ int main(){
     cout << "\n";
     
     int arrList[]={1,2,3,49,0,8,99,222,0,222,0,99999};
+    int arrSize=sizeof(arrList)/sizeof(arrList[0]);
+    cout << "\narrSize->" << arrSize;
     cout << "\nGiven list:\n" ;
-    print(arrList);
     cout << "\nBiggest number of the given array is:";
-    cout << find_the_biggest_of_the_array(arrList);
+    cout << find_the_biggest_of_the_array(arrList,arrSize);
     cout << "\n";
 
     return 0;
