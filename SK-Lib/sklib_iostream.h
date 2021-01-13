@@ -18,6 +18,6 @@ void printArray(DT *list,int size){
       list++;
     }
 
-}
+  }
 
-#endif /*SKLIB_IOSTREAM*/
+#endif /* SKLIB_IOSTREAM */

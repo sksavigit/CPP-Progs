@@ -14,8 +14,8 @@ int main(){
 
       printArray(f,sizeof(f)/sizeof(f[0]));
 
-      string s[]={"check","this","out"};
-
+      string s[]={"Item number 1","Item number 2","Item number 3"};
+      
       printArray(s,3);
 
 }
