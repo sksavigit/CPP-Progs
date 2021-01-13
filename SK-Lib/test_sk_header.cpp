@@ -26,11 +26,15 @@ int main(){
 
     char n1[]="12456789992342342342342342342424";
     char n2[]="99999999999999999999999999999999";
-    int n1size=sizeof(n1)/sizeof(n1[0]);
-    int n2size=sizeof(n2)/sizeof(n2[0]);
-    char res[n1size>n2size ?n1size+1 : n2size+1];
-    sum_two_big_numbers(n1,n1size,n2,n2size,res);
-    cout << res;
+//    int n1size=sizeof(n1)/sizeof(n1[0]);
+  //  int n2size=sizeof(n2)/sizeof(n2[0]);
+    char a='9';
+    int c=(int)a;
+    cout << "C="<< c << "\n";
+    char *res;
+    sum_two_big_numbers(n1,n2,res);
+    
+    //cout << res;
 
     return 0;
 }

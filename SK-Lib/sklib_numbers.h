@@ -27,30 +27,50 @@ int find_the_biggest_of_the_array(int numList[],int arrSize){
   Functions to handle big numbers
 */
 
-void sum_two_big_numbers(char* n1,int n1size,char* n2,int n2size,char res[]){
+void sum_two_big_numbers(char* n1,char* n2,char* res){
     int i=0;
-    for(i=0;i < n1size-1;i++) {
-    cout << *n1;
-    *n1++;
+    int n1size=0;
+    int n2size=0;
+    if(n2) {
+    while(*n2){
+    ++n2;
+    i++;
     }
-    for(i=0;i < n2size;i++) n2++;
+      --n2;
+      n1size=i;
+      i=0;
+    }
+    if(n1){
+      while(*n1){
+      ++n1;
+      i++;
+      }
+      --n1;
+      n2size=i;
+    }
+    cout << "\nn2->" << *n2;
+    cout << "\nn1->" << *n1;
+    cout << "\nn1size=" << n1size;
+    cout << "\nn2size=" << n2size;
+
     int carriage=0;
     int sum=0;
     char result[n1size>n2size ? n1size+1 : n2size+1];
     int resi=0;
     if(n1size >= n2size){
       int tmp=*n2;
-      for(i=0;i < n1size;i++){
+      cout << tmp;
+      for(i=40;i < n1size;i++){
           sum = (tmp) + (int)(*n1)+carriage;
+          cout << "\n" << sum;
           carriage=sum%10;
           result[resi] = (char)(sum-carriage);
-          //cout << result[resi];
           resi++;
-          n1--;
-          if(n2size>i) tmp=0;
+          --n1;
+          if(n2size > i) tmp=0;
           else{
           tmp= (int) *n2;
-          n2--;
+          --n2;
           }
       }
 
