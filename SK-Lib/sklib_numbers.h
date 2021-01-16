@@ -34,11 +34,11 @@ void sum_two_big_numbers(char* n1,char* n2,char result[]){
     int n2size=0;
     if(n2) {
     while(*n2){
-    ++n2;
-    i++;
+      ++n2;
+      i++;
     }
       --n2;
-      n1size=i;
+      n2size=i-1;
       i=0;
     }
     if(n1){
@@ -47,39 +47,34 @@ void sum_two_big_numbers(char* n1,char* n2,char result[]){
       i++;
       }
       --n1;
-      n2size=i;
+      n1size=i-1;
     }
 
     int carriage=0;
     int sum=0;
-    int arrSize=(n1size >= n2size? n1size+1 : n2size+1);
+    int arrSize=(n1size > n2size ? n1size : n2size);
     int ri=0;
     int n1_tmp = abs(48-(int)*n1);
     int n2_tmp = abs(48-(int)*n2);
-    char* list1;
-    char* list2;
-    if(n1size < n2size){
-      list1 = n1;
-      list2 = n2;
-    }else{
-      list1 = n2;
-      list2 = n1;
-    }
-      
-    for(i=0;i < arrSize ;i++){
-          sum = n2_tmp + n1_tmp+carriage;
+    --n1;
+    --n2;
+    for(i=1 ;i <arrSize ;i++){
+          sum = n2_tmp + n1_tmp + carriage;
+         // cout << "\nn1_tmp:"<<n1_tmp<<" n2_tmp:"<<n2_tmp<<" carriage:"<<carriage;
           result[ri] = '0'+(sum%10);
           carriage=sum/10;
           ri++;
-          if(n2size > 0){
-            n2_tmp= abs(48-(int)*list2);
-            --list2;
+
+          if(n2size > 1){
+            n2_tmp= abs(48-(int)*n2);
+            --n2;
           }else{
             n2_tmp=0;
           }
-          if(n1size > 0){
-            n1_tmp=abs(48-(int)*list1);
-            --list1;
+
+          if(n1size > 1){
+            n1_tmp=abs(48-(int)*n1);
+            --n1;
           }else{
             n1_tmp=0;
           }
@@ -88,9 +83,10 @@ void sum_two_big_numbers(char* n1,char* n2,char result[]){
           n2size--;
 
       }
-    result[ri]='0'+carriage;
+      
+      result[ri]='0'+carriage;
 
-    reverse_string(result);
+      reverse_string(result);
 }
 
 #endif /*SKLIB_NUMBERS*/
