@@ -1,35 +1,20 @@
 #include<iostream>
 #include "sklib_numbers.h"
-
+#include "sklib_iostream.h"
 using namespace std;
 
 int main(){
-    /*char str[]  ="Check the function in the header SKlib";
-    char str1[] ="ROTOR";
-
-    if(isPalindrome(str1)) cout << str1 << " is a Palindrome.";
-    else cout << str1 << " is not a palindrome";
-    
-    cout << "\nGiven string:\n" << str;
-    reverse_string(str);
-    cout << "\nReversed string:\n"<<str;
-    cout << "\n";
-    
-    int arrList[]={1,2,3,49,0,8,99,222,0,222,0,99999};
-    int arrSize=sizeof(arrList)/sizeof(arrList[0]);
-    cout << "\narrSize->" << arrSize;
-    cout << "\nGiven list:\n" ;
-    cout << "\nBiggest number of the given array is:";
-    cout << find_the_biggest_of_the_array(arrList,arrSize);
-    cout << "\n";
-    */
     char n1[]="12456789992342342342342342342424";
-    char n2[]="99999999999999999999999999999999";
-//    int n1size=sizeof(n1)/sizeof(n1[0]);
-  //  int n2size=sizeof(n2)/sizeof(n2[0]);
-    char *res;
+    char n2[]="3434243234234234234234234234234234133412341321432413241324312413243124312431242134213421341324123413431243124312421342340000000000099999999999999999999999999999999";
+    cout << "\n Num1:" <<n1;
+    cout << "\n Num2:" <<n2;
+    cout << "\n Output:";
+    int n1Size=sizeof(n1)/sizeof(n1[0]);
+    int n2Size=sizeof(n2)/sizeof(n2[0]);
+
+    char res[n1Size>n2Size ? n1Size+1:n2Size+1];
     sum_two_big_numbers(n1,n2,res);
-    
-    //printArray(res,n1size)
+    cout << res;
+    cout <<"\n";
     return 0;
 }
