@@ -30,7 +30,6 @@ int main(){
     char *res;
     sum_two_big_numbers(n1,n2,res);
     
-    cout << res;
-
+    //printArray(res,n1size)
     return 0;
 }

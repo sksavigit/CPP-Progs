@@ -52,35 +52,38 @@ void sum_two_big_numbers(char* n1,char* n2,char* res){
 
     int carriage=0;
     int sum=0;
-    char result[n1size >= n2size ? n1size+1 : n2size+1];
+    int arrSize=(n1size >= n2size? n1size+1 : n2size+1);
+    char result[arrSize];
     int ri=0;
     int n1_tmp = abs(48-(int)*n1);
     int n2_tmp = abs(48-(int)*n2);
-    int keepv=0;
     if(n1size < n2size){
       char* tmp=n1;
       n1 = n2;
       n2 = tmp;     
     }
       
-    for(i=0;i < n1size;i++){
+    for(i=0;i < arrSize ;i++){
           sum = n2_tmp + n1_tmp+carriage;
-          keepv = sum%10;
-          result[ri] = '0'+keep_v;
+          result[ri] = '0'+(sum%10);
           carriage=sum/10;
           ri++;
           --n1;
-          if(n2size < i) n2_tmp=0;
+          if(n2size < 0) n2_tmp=0;
           else{
             n2_tmp= abs(48-(int)*n2);
             --n2;
           }
-
-          n1_tmp=abs(48-(int)*n1);
+          n2size--;
+           n1_tmp=abs(48-(int)*n1);
 
       }
-    result[ri]=carriage;
+    //result[ri]='0'+(sum%10);
+    cout << "Carriage:" << carriage;
+    cout << "Sum:" << sum;
+    cout << "\n";
     reverse_string(result);
+    cout << result;
     res = result;
 }
 
