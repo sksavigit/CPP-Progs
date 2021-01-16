@@ -4,8 +4,8 @@
 using namespace std;
 
 int main(){
-    char n1[]="12345";
-    char n2[]="11111";
+    char n1[]="0000000000000000000000000001";
+    char n2[]="1111123424324243234234234324";
     cout << "\n Num1:" <<n1;
     cout << "\n Num2:" <<n2;
     cout << "\n Outp:";
@@ -13,9 +13,6 @@ int main(){
     int n2Size=sizeof(n2)/sizeof(n2[0]);
     char res[n1Size>n2Size ? n1Size:n2Size];
     sum_two_big_numbers(n1,n2,res);
-    cout << res;
-    cout <<"\n";
-    cout <<"\nn1size:"<<n1Size;
-    cout<<"\nn2size:"<<n2Size;
+    cout << res<< "\n";
     return 0;
 }

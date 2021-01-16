@@ -52,39 +52,37 @@ void sum_two_big_numbers(char* n1,char* n2,char result[]){
 
     int carriage=0;
     int sum=0;
-    int arrSize=(n1size >= n2size ? n1size : n2size);
-    int ri=0;
+    int arrSize=(n1size >= n2size ? n1size+1 : n2size+1);
     int n1_tmp = abs(48-(int)*n1);
     int n2_tmp = abs(48-(int)*n2);
     --n1;
     --n2;
-    for(i=0;i < arrSize;i++){
+    i=0;
+    for(;i < arrSize;i++){
           sum = n2_tmp + n1_tmp + carriage;
-          cout << "\nn1_tmp:"<<n1_tmp<<" n2_tmp:"<<n2_tmp<<" carriage:"<<carriage<<" i="<<i;
-          result[ri] = '0'+(sum%10);
+          //cout << "\nn1_tmp:"<<n1_tmp<<" n2_tmp:"<<n2_tmp<<" carriage:"<<carriage<<" i="<<i;
+          result[i] = '0'+(sum%10);
           carriage=sum/10;
-          ri++;
 
-          if(n2size > 0){
+          if(n2size > 1){
             n2_tmp= abs(48-(int)*n2);
             --n2;
           }else{
             n2_tmp=0;
           }
 
-          if(n1size > 0){
+          if(n1size > 1){
             n1_tmp=abs(48-(int)*n1);
             --n1;
           }else{
             n1_tmp=0;
           }
 
-          n1size--;
-          n2size--;
+          --n1size;
+          --n2size;
 
       }
-      
-      //result[ri++]='0'+carriage;
+      result[i]='0'+carriage;
 
       reverse_string(result);
 }
