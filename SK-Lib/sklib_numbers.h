@@ -89,6 +89,7 @@ void sum_two_big_numbers(char* n1,char* n2,char result[]){
 
       }
     result[ri]='0'+carriage;
+
     reverse_string(result);
 }
 
