@@ -1,4 +1,5 @@
 #include<iostream>
+#include "sklib_strings.h"
 #ifndef SKLIB_NUMBERS
 using namespace std;
 /*
@@ -48,35 +49,38 @@ void sum_two_big_numbers(char* n1,char* n2,char* res){
       --n1;
       n2size=i;
     }
-    cout << "\nn2->" << *n2;
-    cout << "\nn1->" << *n1;
-    cout << "\nn1size=" << n1size;
-    cout << "\nn2size=" << n2size;
 
     int carriage=0;
     int sum=0;
-    char result[n1size>n2size ? n1size+1 : n2size+1];
-    int resi=0;
-    if(n1size >= n2size){
-      int tmp=*n2;
-      cout << tmp;
-      for(i=40;i < n1size;i++){
-          sum = (tmp) + (int)(*n1)+carriage;
-          cout << "\n" << sum;
-          carriage=sum%10;
-          result[resi] = (char)(sum-carriage);
-          resi++;
-          --n1;
-          if(n2size > i) tmp=0;
-          else{
-          tmp= (int) *n2;
-          --n2;
-          }
-      }
-
-      if(carriage > 0) result[resi]=(char)carriage;
+    char result[n1size >= n2size ? n1size+1 : n2size+1];
+    int ri=0;
+    int n1_tmp = abs(48-(int)*n1);
+    int n2_tmp = abs(48-(int)*n2);
+    int keepv=0;
+    if(n1size < n2size){
+      char* tmp=n1;
+      n1 = n2;
+      n2 = tmp;     
     }
-    result[resi++]='\0';
+      
+    for(i=0;i < n1size;i++){
+          sum = n2_tmp + n1_tmp+carriage;
+          keepv = sum%10;
+          result[ri] = '0'+keep_v;
+          carriage=sum/10;
+          ri++;
+          --n1;
+          if(n2size < i) n2_tmp=0;
+          else{
+            n2_tmp= abs(48-(int)*n2);
+            --n2;
+          }
+
+          n1_tmp=abs(48-(int)*n1);
+
+      }
+    result[ri]=carriage;
+    reverse_string(result);
     res = result;
 }
 

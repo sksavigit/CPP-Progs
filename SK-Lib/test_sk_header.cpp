@@ -1,11 +1,10 @@
 #include<iostream>
-#include "sklib_strings.h"
 #include "sklib_numbers.h"
 
 using namespace std;
 
 int main(){
-    char str[]  ="Check the function in the header SKlib";
+    /*char str[]  ="Check the function in the header SKlib";
     char str1[] ="ROTOR";
 
     if(isPalindrome(str1)) cout << str1 << " is a Palindrome.";
@@ -23,18 +22,15 @@ int main(){
     cout << "\nBiggest number of the given array is:";
     cout << find_the_biggest_of_the_array(arrList,arrSize);
     cout << "\n";
-
+    */
     char n1[]="12456789992342342342342342342424";
     char n2[]="99999999999999999999999999999999";
 //    int n1size=sizeof(n1)/sizeof(n1[0]);
   //  int n2size=sizeof(n2)/sizeof(n2[0]);
-    char a='9';
-    int c=(int)a;
-    cout << "C="<< c << "\n";
     char *res;
     sum_two_big_numbers(n1,n2,res);
     
-    //cout << res;
+    cout << res;
 
     return 0;
 }
